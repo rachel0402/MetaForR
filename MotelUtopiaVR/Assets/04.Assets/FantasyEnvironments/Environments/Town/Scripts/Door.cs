@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour {
+public class DoorOpen : MonoBehaviour {
 	public Animator anim;
 
 	// Use this for initialization
@@ -12,13 +12,11 @@ public class Door : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other) {
 		anim.SetBool ("DoorOpen", true);
-		anim.SetBool ("DoorClose", false);
 
 	}
 
 	void OnTriggerExit (Collider other) {
 		anim.SetBool ("DoorOpen", false);
-		anim.SetBool ("DoorClose", true);
 
 	}
 
