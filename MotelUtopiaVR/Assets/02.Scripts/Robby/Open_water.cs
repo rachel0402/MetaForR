@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Open : MonoBehaviour
+public class Open_water : MonoBehaviour
 {
     public GameObject doorObject;
     Animator doorAnim;
@@ -19,14 +20,13 @@ public class Open : MonoBehaviour
         {
             //doorObject.transform.Rotate(new Vector3(0,0,0));
             doorAnim.SetTrigger("Open");
+            Invoke("ChangeScene", 2f);
         }
     }
-    void OnTriggerExit(Collider n)
+
+    void ChangeScene()
     {
-        if (n.gameObject.CompareTag("door"))
-        {
-            //doorObject.transform.Rotate(new Vector3(0, 90, 0));
-            doorAnim.SetTrigger("Ready");
-        }
+        SceneManager.LoadScene("Water");
     }
+    
 }
