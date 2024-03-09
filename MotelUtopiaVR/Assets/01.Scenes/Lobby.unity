@@ -227,7 +227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 60193589}
   - component: {fileID: 60193590}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 195730089}
   - component: {fileID: 195730090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -776,9 +776,9 @@ GameObject:
   - component: {fileID: 203372831}
   - component: {fileID: 203372832}
   - component: {fileID: 203372833}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: water door
-  m_TagString: Untagged
+  m_TagString: door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -844,7 +844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 232568206}
   - component: {fileID: 232568207}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2303,7 +2303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 535099830}
   - component: {fileID: 535099831}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2528,7 +2528,7 @@ GameObject:
   m_Component:
   - component: {fileID: 625472261}
   - component: {fileID: 625472262}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2622,7 +2622,7 @@ GameObject:
   m_Component:
   - component: {fileID: 627281286}
   - component: {fileID: 627281287}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3914,7 +3914,7 @@ GameObject:
   m_Component:
   - component: {fileID: 766527779}
   - component: {fileID: 766527778}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4065,6 +4065,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: space door no hand2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4aa5217c7b251874cb278a37ad43b5f1, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4aa5217c7b251874cb278a37ad43b5f1, type: 3}
 --- !u!4 &777048829 stripped
@@ -4082,7 +4086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 798715559}
   - component: {fileID: 798715560}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4176,7 +4180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 810901229}
   - component: {fileID: 810901230}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5611,7 +5615,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1024549203}
   - component: {fileID: 1024549204}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5774,7 +5778,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1047276667}
   - component: {fileID: 1047276668}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5868,7 +5872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1059048312}
   - component: {fileID: 1059048313}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6684,7 +6688,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1286993585}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7204,7 +7208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1541950040}
   - component: {fileID: 1541950041}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7705,9 +7709,9 @@ GameObject:
   - component: {fileID: 1716502160}
   - component: {fileID: 1716502161}
   - component: {fileID: 1716502162}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: space door
-  m_TagString: Untagged
+  m_TagString: door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7825,6 +7829,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 790883bd18cf18f4db119d893dda2b73, type: 3}
       propertyPath: m_Name
       value: water door no hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 790883bd18cf18f4db119d893dda2b73, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 790883bd18cf18f4db119d893dda2b73, type: 3}
@@ -8350,7 +8358,7 @@ GameObject:
   - component: {fileID: 1753389888}
   - component: {fileID: 1753389887}
   - component: {fileID: 1753389886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: space hand M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8613,6 +8621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: water hand
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2cc62d4717a86964983f3ff0734e2d0c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cc62d4717a86964983f3ff0734e2d0c, type: 3}
 --- !u!1 &1798531932 stripped
@@ -8873,6 +8885,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: plant door2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63f8bdbc63db2364bbc6859a756aaa9f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63f8bdbc63db2364bbc6859a756aaa9f, type: 3}
 --- !u!4 &1803746342 stripped
@@ -9102,6 +9118,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: space hand2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86cd2a80734dd534bbc51c050d9d5ed2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86cd2a80734dd534bbc51c050d9d5ed2, type: 3}
 --- !u!4 &1846308739 stripped
@@ -9119,7 +9139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1866187542}
   - component: {fileID: 1866187543}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9957,7 +9977,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1891356200}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10307,7 +10327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1971540513}
   - component: {fileID: 1971540514}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10400,7 +10420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2056721451}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10441,9 +10461,9 @@ GameObject:
   - component: {fileID: 2073828935}
   - component: {fileID: 2073828938}
   - component: {fileID: 2073828939}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plant door
-  m_TagString: Untagged
+  m_TagString: door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
