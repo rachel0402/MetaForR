@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class Grow : MonoBehaviour
 {
-    GameObject[] Leaves = new GameObject[10];
+    private int Leaf_count;
+    GameObject[] Leaves;
+    private float[] Leaves_size;
     public float time;
     public float size;
-    public float growthRate = 0.07f; // 성장 속도
-    public float growthTime = 100f;
+    public float growthRate = 0.07f;
+    private float growthTime;
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < 10; i++)
+        Leaf_count = transform.childCount;
+        growthTime = Leaf_count * 10;
+        Leaves = new GameObject[Leaf_count];
+        Leaves_size = new float[Leaf_count];
+
+        for (int i = 0; i < Leaf_count; i++)
         {
             Leaves[i] = transform.GetChild(i).gameObject;
+            Leaves_size[i] = transform.GetChild(i).transform.localScale.x;
             Leaves[i].SetActive(false);
         }
     }
@@ -37,15 +45,14 @@ public class Grow : MonoBehaviour
             if (currentLeaf.activeSelf == false)
                 currentLeaf.SetActive(true);
 
-            float initialSize = index * 0.075f; // 각 잎의 초기 크기 설정
-            size = initialSize + (time % 10) * growthRate; // 초기 크기에 성장 속도를 곱하여 크기를 계산
+            size = (Leaves_size[index]) * (time % 10) * growthRate;
             currentLeaf.transform.localScale = new Vector3(size, size, size);
         }
     }
 
     void clock()
     {
-        if (time <= growthTime)
+        if (time <= growthTime && time > 0)
         {
             time += Time.deltaTime;
 

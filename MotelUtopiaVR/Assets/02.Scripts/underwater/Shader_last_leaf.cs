@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shader : MonoBehaviour
+public class Shader_last_leaf : MonoBehaviour
 {
     public float minValue;
     public float maxValue;
     private float getValue;
+    public float last_leaf;
 
     public float speed = 1f;
 
@@ -22,7 +23,7 @@ public class Shader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponentInParent<Grow>().time < 0)
+        if (last_leaf > 0)
         {
             gameObject.GetComponent<MeshRenderer>().material = Chage;
             Remove();
