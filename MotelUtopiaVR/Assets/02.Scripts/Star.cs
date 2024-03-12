@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public partial class Star : MonoBehaviour
 {
 
-    //º° ¼ø¼­´ë·Î ³Ö±â
+    //ë³„ ìˆœì„œëŒ€ë¡œ ë„£ê¸°
     [SerializeField]
     List<StarObject> starObjectList = new List<StarObject>();
 
@@ -24,19 +24,19 @@ public partial class Star : MonoBehaviour
 
 
 
-    //º° ¼ø¼­ÀÇ ACTIVE °ªÀ» ¹Ş¾Æ¼­ ¼ø¼­ Ã¼Å©
+    //ë³„ ìˆœì„œì˜ ACTIVE ê°’ì„ ë°›ì•„ì„œ ìˆœì„œ ì²´í¬
     List<bool> correctCheckList = new List<bool>();
 
     bool correctCheck = true;
 
-    //¸î¹øÂ° Å¬¸¯ÀÎÁö È®ÀÎ
+    //ëª‡ë²ˆì§¸ í´ë¦­ì¸ì§€ í™•ì¸
     int activeIndex;
 
 
 }
 public partial class Star : MonoBehaviour
 {
-    //ÃÊ±âÈ­
+    //ì´ˆê¸°í™”
 
     void Initialize()
     {
@@ -55,11 +55,23 @@ public partial class Star : MonoBehaviour
 }
 public partial class Star : MonoBehaviour
 {
-   
+    //í´ë¦­ ì‚¬ìš´ë“œ ì†ŒìŠ¤
+    [SerializeField]
+    private AudioSource clickSound;
+
+    //ë°˜ì§ì„ íš¨ê³¼ íŒŒí‹°í´
+    [SerializeField]
+    private ParticleSystem sparkleEffect;
     
     public void StarCheck()
     {
-        //¼ø¼­´ë·Î Å¬¸¯Çß´Ù¸é
+        //í´ë¦­ ì‚¬ìš´ë“œ ì¬ìƒ
+        clickSound.Play();
+
+        //ë°˜ì§ì„ íš¨ê³¼ ì¬ìƒ
+        sparkleEffect.Play();
+
+        //ìˆœì„œëŒ€ë¡œ í´ë¦­í–ˆë‹¤ë©´
         if (starObjectList[activeIndex].isActive)
         {
             Debug.Log("true");
@@ -83,7 +95,7 @@ public partial class Star : MonoBehaviour
 
         if (activeIndex >= starObjectList.Count)
         {
-            //ÇÏ³ª¶óµµ FALSE¸¦ °¡Áö°í ÀÖ´Ù¸é TRUE ¹İÈ¯
+            //í•˜ë‚˜ë¼ë„ FALSEë¥¼ ê°€ì§€ê³  ìˆë‹¤ë©´ TRUE ë°˜í™˜
             correctCheck = correctCheckList.Contains(false);
 
             if (correctCheck)
@@ -104,7 +116,7 @@ public partial class Star : MonoBehaviour
         Debug.Log(activeIndex);
     }
 
-    //¸¸¾à incorrect ¿´À»¶§ ÃÊ±âÈ­ ½ÃÄÑÁÖ±â
+    //ë§Œì•½ incorrect ì˜€ì„ë•Œ ì´ˆê¸°í™” ì‹œì¼œì£¼ê¸°
     public void StarReset()
     {
         correctCheckList.Clear();
