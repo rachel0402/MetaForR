@@ -1,0 +1,38 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class GameMenu : MonoBehaviour
+{
+    public Slider volumeSlider;
+    public Button quitButton;
+    // Start is called before the first frame update
+    void Start()
+    {
+        volumeSlider.onValueChanged.AddListener(delegate { OnVolumeChange(); });
+
+        quitButton.onClick.AddListener(delegate { OnQuitClick(); });
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    void OnVolumeChange()
+    {
+        AudioListener.volume = volumeSlider.value;
+    }
+
+    void OnQuitClick()
+    {
+        // Quit the application
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
+}
