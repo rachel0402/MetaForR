@@ -11,6 +11,15 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/01.Scenes/Forest.unity
+    guid: 6370c1fa6fd93304688054d84729f194
+  - enabled: 1
+    path: Assets/01.Scenes/Test.unity
+    guid: 7805489a130b26841852a4d91322beb3
+  - enabled: 1
+    path: Assets/01.Scenes/GameMenu.unity
+    guid: c7f4dc5ffc50b7245a406e566e4a74f9
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bd4ed4ae570e87d40981cdf79d99aa73, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 7952b2efd83e58646a2554665ab9ecd9, type: 2}
