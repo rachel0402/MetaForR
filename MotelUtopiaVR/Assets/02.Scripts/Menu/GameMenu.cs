@@ -17,7 +17,7 @@ public class GameMenu : MonoBehaviour
 
         quitButton.onClick.AddListener(delegate { OnQuitClick(); });
 
-        lobbySceneButton.onClick.AddListener(delegate { OnSceneClick(); });
+       // lobbySceneButton.onClick.AddListener(delegate { OnSceneClick(); });
     }
 
     // Update is called once per frame
