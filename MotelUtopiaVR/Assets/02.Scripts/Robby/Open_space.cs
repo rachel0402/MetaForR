@@ -16,7 +16,7 @@ public class Open_space : MonoBehaviour
 
     void OnTriggerEnter(Collider n)
     {
-        if (n.gameObject.CompareTag("door"))
+        if (n.gameObject.CompareTag("key_s"))
         {
             //doorObject.transform.Rotate(new Vector3(0,0,0));
             doorAnim.SetTrigger("Open");

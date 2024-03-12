@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - door
+  - key_s
+  - key_w
+  - key_p
+  - Right Hand
   layers:
   - Default
   - TransparentFX
@@ -13,7 +17,7 @@ TagManager:
   - Water
   - UI
   - door
-  - 
+  - key
   - 
   - 
   - 

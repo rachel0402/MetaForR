@@ -16,7 +16,7 @@ public class Open_water : MonoBehaviour
 
     void OnTriggerEnter(Collider n)
     {
-        if (n.gameObject.CompareTag("door"))
+        if (n.gameObject.CompareTag("key_w"))
         {
             //doorObject.transform.Rotate(new Vector3(0,0,0));
             doorAnim.SetTrigger("Open");
