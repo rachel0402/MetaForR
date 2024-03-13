@@ -14,8 +14,6 @@ public class Shader_last_leaf : MonoBehaviour
     public Material Set;
     public Material Chage;
 
-    public GameObject Parents;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -44,17 +42,10 @@ public class Shader_last_leaf : MonoBehaviour
 
         if (getValue < minValue)
         {
-            GetComponentInParent<Selet>().Gravity.useGravity = false;
             gameObject.SetActive(false);
-
             getValue = maxValue;
             Chage.SetFloat("_Value", getValue);
             gameObject.GetComponent<MeshRenderer>().material = Set;
-            last_leaf = 0;
-
-            Parents = transform.parent.gameObject;
-            Parents.transform.localPosition = GetComponentInParent<Grow>().Fix_position;
-            Parents.transform.localEulerAngles = GetComponentInParent<Grow>().Fix_Rotation;
         }
        
     }

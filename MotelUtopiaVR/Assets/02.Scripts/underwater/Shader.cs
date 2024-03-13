@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Shader : MonoBehaviour
 {
-    public float minValue = -1;
-    public float maxValue = 1;
+    public float minValue;
+    public float maxValue;
     private float getValue;
 
-    public float speed = 0.5f;
+    public float speed = 1f;
 
     public Material Set;
     public Material Chage;
