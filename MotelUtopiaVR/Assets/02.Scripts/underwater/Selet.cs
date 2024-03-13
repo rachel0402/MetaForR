@@ -8,7 +8,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Selet : MonoBehaviour
 {
     private XRGrabInteractable Grab;
-    private Rigidbody Drag;
+    public ParticleSystem particle;
+    public ParticleSystem particle2;
+    public Rigidbody Gravity;
 
     private void Start()
     {
@@ -18,13 +20,20 @@ public class Selet : MonoBehaviour
     private void First_grab()
     {
         Grab = GetComponent<XRGrabInteractable>();
-        Drag = GetComponent<Rigidbody>();
-        Grab.firstSelectEntered.AddListener(Settime);
+        Gravity = GetComponent<Rigidbody>();
+        Grab.selectEntered.AddListener(Set_Grab);
+        Grab.selectExited.AddListener(Set_NonGrab);
     }
 
-    private void Settime(SelectEnterEventArgs interactor)
+    private void Set_Grab(SelectEnterEventArgs interactor)
     {
+        particle.Play();
+        particle2.Play();
+    }
+
+    private void Set_NonGrab(SelectExitEventArgs interacter)
+    {
+        Gravity.useGravity = true;
         GetComponentInParent<Grow>().time = -1f;
-        Drag.drag = 0;
     }
 }
