@@ -6,13 +6,12 @@ using UnityEngine;
 
 public class ObjectHit : MonoBehaviour
 {
-    public Material Chage;
-
     private void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.tag == "Ground")
         {
-            GetComponent<Shader_last_leaf>().last_leaf = 1;
+            GetComponentInChildren<Shader_last_leaf>().last_leaf = 1;
+            GetComponentInParent<Grow>().time = 140f;
         }
     }
 }
