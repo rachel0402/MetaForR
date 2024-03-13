@@ -12,6 +12,9 @@ public class Grow : MonoBehaviour
     public float growthRate = 0.07f;
     private float growthTime;
 
+    GameObject Fix;
+    public Vector3 Fix_position;
+    public Vector3 Fix_Rotation;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +25,22 @@ public class Grow : MonoBehaviour
 
         for (int i = 0; i < Leaf_count; i++)
         {
-            Leaves[i] = transform.GetChild(i).gameObject;
-            Leaves_size[i] = transform.GetChild(i).transform.localScale.x;
-            Leaves[i].SetActive(false);
+            if (i == Leaf_count - 1)
+            {
+                Fix = transform.GetChild(i).gameObject;
+                Fix_position = Fix.transform.localPosition;
+                Fix_Rotation = Fix.transform.localEulerAngles;
+
+                Leaves[i] = transform.GetChild(i).GetChild(1).gameObject;
+                Leaves_size[i] = transform.GetChild(i).GetChild(1).transform.localScale.x;
+                Leaves[i].SetActive(false);
+            }
+            else
+            {
+                Leaves[i] = transform.GetChild(i).gameObject;
+                Leaves_size[i] = transform.GetChild(i).transform.localScale.x;
+                Leaves[i].SetActive(false);
+            }
         }
     }
 
@@ -47,12 +63,17 @@ public class Grow : MonoBehaviour
 
             size = (Leaves_size[index]) * (time % 10) * growthRate;
             currentLeaf.transform.localScale = new Vector3(size, size, size);
+
+            if(index == Leaf_count - 1)
+            {
+                Fix.transform.localPosition = Fix_position;
+            }
         }
     }
 
     void clock()
     {
-        if (time <= growthTime && time > 0)
+        if (time <= growthTime && time > -1)
         {
             time += Time.deltaTime;
 
