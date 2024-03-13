@@ -16,11 +16,11 @@ public partial class UniverseScene : MonoBehaviour
     private void Awake()
     {
 
+        startSceneEvent?.Invoke();
     }
 
     private void Start()
     {
-        startSceneEvent?.Invoke();
     }
 
     private void Initialize()
