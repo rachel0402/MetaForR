@@ -9,6 +9,9 @@ TagManager:
   - key_w
   - key_p
   - Right Hand
+  - Ground
+  - DialogPanel
+  - floor
   layers:
   - Default
   - TransparentFX
