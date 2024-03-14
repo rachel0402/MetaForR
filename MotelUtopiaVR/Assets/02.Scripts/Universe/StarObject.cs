@@ -9,29 +9,26 @@ public partial class StarObject : MonoBehaviour
 }
 public partial class StarObject : MonoBehaviour
 {
-    //클릭 사운드
-    [SerializeField]
-    private AudioSource clickSound;
 
     //반짝임 효과
+    //private GameObject sparkleEffectPrefabs;
+
     [SerializeField]
     private ParticleSystem sparkleEffect;
 
     public void Initialize(Star starValue)
     {
         star = starValue;
-
-        clickSound = GetComponent<AudioSource>();
-        sparkleEffect = GetComponent<ParticleSystem>();
     }
 
-        public void PlayClickSound()
-    {
-        clickSound.Play();
-    }
+ 
 
     public void PlaySparkleEffect()
     {
+        //지금 피봇이 중점이 아니라 불가능
+        //GameObject instance = Instantiate(sparkleEffectPrefabs, this.transform);
+        //sparkleEffect = instance.GetComponent<ParticleSystem>();
+
         sparkleEffect.Play();
     }
 
@@ -53,9 +50,8 @@ public partial class StarObject : MonoBehaviour
     public void StarCheck()
     {
         Debug.Log("StarCheck");
-
+        PlaySparkleEffect();
         SetActiveState(true);
-        //���� �����ٸ�
         star.StarCheck();
     }
 

@@ -5,6 +5,16 @@ using UnityEngine.Events;
 public partial class Star : MonoBehaviour
 {
 
+    //클릭 사운드
+    [SerializeField]
+    private AudioSource clickSound;
+
+    [SerializeField]
+    private AudioClip clickClip;
+
+    
+
+
     //별 순서대로 넣기
     [SerializeField]
     List<StarObject> starObjectList = new List<StarObject>();
@@ -61,10 +71,9 @@ public partial class Star : MonoBehaviour
         if (starObjectList[activeIndex].isActive)
         {
             //클릭 사운드 재생
-            starObjectList[activeIndex].PlayClickSound();
+            PlayClickSound();
 
             //반짝임 효과 재생
-            starObjectList[activeIndex].PlaySparkleEffect();
 
             Debug.Log("true");
             correctCheckList.Add(true);
@@ -72,7 +81,6 @@ public partial class Star : MonoBehaviour
         else
         {
             //반짝임 효과 재생 안 함
-            starObjectList[activeIndex].StopSparkleEffect();
 
             Debug.Log("false");
             correctCheckList.Add(false);
@@ -80,7 +88,10 @@ public partial class Star : MonoBehaviour
 
         FinishCheck();
     }
-
+    public void PlayClickSound()
+    {
+        clickSound.PlayOneShot(clickClip);
+    }
     public void FinishCheck()
     {
         if (activeIndex < starObjectList.Count)
@@ -115,10 +126,11 @@ public partial class Star : MonoBehaviour
     public void StarReset()
     {
         correctCheckList.Clear();
-
+        activeIndex = 0;
         for (int i = 0; i < starObjectList.Count; i++)
         {
             starObjectList[i].isActive = false;
+            starObjectList[i].StopSparkleEffect();
         }
     }
 }
