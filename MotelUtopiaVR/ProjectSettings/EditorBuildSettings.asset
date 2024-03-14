@@ -6,29 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/01.Scenes/Lobby.unity
-    guid: 085cfbbd5f118e04ba2e63bd79978b77
-  - enabled: 1
-    path: Assets/01.Scenes/FadeEffectSecne.unity
-    guid: cffcc1216381f6141b1b78492eb2d807
-  - enabled: 1
-    path: Assets/01.Scenes/InitialzeScene.unity
-    guid: 82275f2f15073014da2b75a135552ce9
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/01.Scenes/Forest.unity
-    guid: 6370c1fa6fd93304688054d84729f194
-  - enabled: 1
-    path: Assets/01.Scenes/Test.unity
-    guid: 7805489a130b26841852a4d91322beb3
-  - enabled: 1
-    path: Assets/01.Scenes/GameMenu.unity
-    guid: c7f4dc5ffc50b7245a406e566e4a74f9
-  - enabled: 1
-    path: Assets/01.Scenes/Universe.unity
-    guid: 3b542c31c9f6e6e4db8be99eb6d2d5fc
+    path: Assets/01.Scenes/Universe 2.unity
+    guid: 22ea25f5d89ed674ebfce20ec9e2aa8a
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bd4ed4ae570e87d40981cdf79d99aa73, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 7952b2efd83e58646a2554665ab9ecd9, type: 2}
