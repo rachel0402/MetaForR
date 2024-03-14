@@ -55,30 +55,25 @@ public partial class Star : MonoBehaviour
 }
 public partial class Star : MonoBehaviour
 {
-    //클릭 사운드 소스
-    [SerializeField]
-    private AudioSource clickSound;
-
-    //반짝임 효과 파티클
-    [SerializeField]
-    private ParticleSystem sparkleEffect;
-    
     public void StarCheck()
-    {
-        //클릭 사운드 재생
-        clickSound.Play();
-
-        //반짝임 효과 재생
-        sparkleEffect.Play();
-
+    {   
         //순서대로 클릭했다면
         if (starObjectList[activeIndex].isActive)
         {
+            //클릭 사운드 재생
+            starObjectList[activeIndex].PlayClickSound();
+
+            //반짝임 효과 재생
+            starObjectList[activeIndex].PlaySparkleEffect();
+
             Debug.Log("true");
             correctCheckList.Add(true);
         }
         else
         {
+            //반짝임 효과 재생 안 함
+            starObjectList[activeIndex].StopSparkleEffect();
+
             Debug.Log("false");
             correctCheckList.Add(false);
         }

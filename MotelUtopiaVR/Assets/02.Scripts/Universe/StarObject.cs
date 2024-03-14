@@ -9,22 +9,53 @@ public partial class StarObject : MonoBehaviour
 }
 public partial class StarObject : MonoBehaviour
 {
+    //í´ë¦­ ì‚¬ìš´ë“œ
+    [SerializeField]
+    private AudioSource clickSound;
+
+    //ë°˜ì§ì„ íš¨ê³¼
+    [SerializeField]
+    private ParticleSystem sparkleEffect;
+
     public void Initialize(Star starValue)
     {
         star = starValue;
+
+        clickSound = GetComponent<AudioSource>();
+        sparkleEffect = GetComponent<ParticleSystem>();
     }
+
+        public void PlayClickSound()
+    {
+        clickSound.Play();
+    }
+
+    public void PlaySparkleEffect()
+    {
+        sparkleEffect.Play();
+    }
+
+    public void StopSparkleEffect()
+    {
+        if (sparkleEffect != null)
+        {
+            sparkleEffect.Stop();
+        }
+        else
+        {
+            Debug.LogWarning("Sparkle effect is not assigned.");
+        }
+    }
+
 }
 public partial class StarObject : MonoBehaviour
 {
-
-    
-
     public void StarCheck()
     {
         Debug.Log("StarCheck");
 
         SetActiveState(true);
-        //¸¸¾à ³¡³µ´Ù¸é
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ù¸ï¿½
         star.StarCheck();
     }
 
