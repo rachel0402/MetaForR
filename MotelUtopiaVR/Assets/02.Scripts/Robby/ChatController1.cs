@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class ChatController2 : MonoBehaviour
+public class ChatController1 : MonoBehaviour
 {
     public Text ChatText;
 
@@ -13,12 +13,14 @@ public class ChatController2 : MonoBehaviour
     public float textDisplayTime = 1f; // 문장이 표시되는 시간
     public GameObject but1;
     public GameObject but2;
+    public GameObject but3;
 
     void Start()
     {
         StartCoroutine(TextPractice());
         but1.gameObject.SetActive(false);
         but2.gameObject.SetActive(false);
+        but3.gameObject.SetActive(false);
     }
 
     IEnumerator NormalChat(string narration)
@@ -38,12 +40,13 @@ public class ChatController2 : MonoBehaviour
 
         but1.gameObject.SetActive(true);
         but2.gameObject.SetActive(true);
- 
+        but3.gameObject.SetActive(true);
+
     }
 
     IEnumerator TextPractice()
     {
-        yield return StartCoroutine(NormalChat("흠.. 그래요, 혹시 제가 그 고민을 덜어낼 수 있는 방을 추천드려도 될까요 ? "));
+        yield return StartCoroutine(NormalChat("요즘 가장 큰 고민이 무엇인가요?"));
         
     }
 
