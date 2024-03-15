@@ -10,8 +10,8 @@ public class ChatController : MonoBehaviour
 
     public string writerText = ""; 
     public float delayBetweenCharacters = 0.05f; // 문자 간의 딜레이 시간
-    public float textDisplayTime = 3f; // 문장이 표시되는 시간
-    public GameObject[] canvases; // 다른 Canvas들을 담을 배열
+    public float textDisplayTime = 2f; // 문장이 표시되는 시간
+    public GameObject[] panals; // 다른 Canvas들을 담을 배열
     private int currentCanvasIndex = 0; // 현재 Canvas의 인덱스
 
     void Start()
@@ -25,28 +25,33 @@ public class ChatController : MonoBehaviour
 
         for (int a = 0; a < narration.Length; a++)
         {
+            Debug.Log(narration.Length);
             writerText += narration[a];
             ChatText.text = writerText;
             yield return new WaitForSeconds(delayBetweenCharacters);
         }
 
         // 모든 문자가 표시된 후 대기
-        yield return new WaitForSeconds(textDisplayTime);
+       yield return new WaitForSeconds(textDisplayTime);
 
-        // 다음 문장을 표시하기 전에 이전 문장이 사라지도록 함
-        while (ChatText.text.Length > 0)
+        //ChatText.gameObject.SetActive(false);
+        //yield return new WaitForSeconds(0.5f);
+        //ChatText.gameObject.SetActive(true);
+
+
+        if (narration.Length == 36)
         {
-            ChatText.text = ChatText.text.Substring(0, ChatText.text.Length - 1);
-            yield return new WaitForSeconds(delayBetweenCharacters);
-        }
-        // 현재 Canvas 비활성화
-        canvases[currentCanvasIndex].SetActive(false);
+            // 현재 Canvas 비활성화
+         panals[currentCanvasIndex].SetActive(false);
 
         // 다음 Canvas 인덱스로 이동
-        currentCanvasIndex = (currentCanvasIndex + 1) % canvases.Length;
+         currentCanvasIndex = (currentCanvasIndex + 1) % panals.Length;
 
         // 다음 Canvas 활성화
-        canvases[currentCanvasIndex].SetActive(true);
+         panals[currentCanvasIndex].SetActive(true);
+
+        }
+       
     }
 
     IEnumerator TextPractice()

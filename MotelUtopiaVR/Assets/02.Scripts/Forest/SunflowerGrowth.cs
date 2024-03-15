@@ -4,70 +4,101 @@ using UnityEngine;
 
 public class SunflowerGrowth : MonoBehaviour
 {
-    public GameObject sunflowerSeed; // 소켓에 넣을 SunflowerSeed 오브젝트
-    public GameObject sunflower; // 성장할 Sunflower 오브젝트
-    private bool isSeedPlanted = false;
-    private float growthRate = 0.1f;
+    private int Leaf_count;
+    GameObject[] Leaves;
+    private float[] Leaves_size;
+    public float time;
+    public float size;
+    public float growthRate = 0.07f;
     private float growthTime;
-    private float currentGrowthTime = 0f;
-    private int leafCount;
-    private GameObject[] leaves;
-    private Vector3[] originalLeafSizes;
+    public GameObject sunflowerSeed; // 이 객체와 상호작용할 Seed 객체
+    public GameObject sunflowerBase; // 이 객체와 상호작용할 Base 객체
+    public GameObject flower;
 
+    // Start is called before the first frame update
     void Start()
     {
-        sunflower.SetActive(false); // 초기에 Sunflower 오브젝트를 비활성화
-        leafCount = sunflower.transform.childCount;
-        leaves = new GameObject[leafCount];
-        originalLeafSizes = new Vector3[leafCount];
+        Leaf_count = transform.childCount;
+        growthTime = Leaf_count * 10;
+        Leaves = new GameObject[Leaf_count];
+        Leaves_size = new float[Leaf_count];
 
-        // 각 잎의 원래 크기와 비활성화 상태를 초기화
-        for (int i = 0; i < leafCount; i++)
+        for (int i = 0; i < Leaf_count; i++)
         {
-            leaves[i] = sunflower.transform.GetChild(i).gameObject;
-            originalLeafSizes[i] = leaves[i].transform.localScale;
-            leaves[i].SetActive(false);
+            Leaves[i] = transform.GetChild(i).gameObject;
+            Leaves_size[i] = transform.GetChild(i).transform.localScale.x;
+            Leaves[i].SetActive(false);
         }
 
-        growthTime = leafCount * 10; // 전체 성장 시간 설정
+        // 초기에는 Sunflower를 비활성화 상태로 만듭니다.
+        gameObject.SetActive(false);
+
+        if (flower != null)
+        {
+            flower.SetActive(false); // 게임 시작 시 Flower 객체도 비활성화
+        }
     }
 
+    // Update is called once per frame
     void Update()
     {
-        // 씨앗이 심어지면 성장 과정 시작
-        if (isSeedPlanted)
+        clock();
+        growing_up(time);
+
+        if (time>=growthTime)
         {
-            GrowSunflower();
+            CompleteGrowth();
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void growing_up(float time)
     {
-        // SunflowerSeed가 소켓에 들어오면 실행
-        if (other.gameObject == sunflowerSeed)
+        if (time >= 0 && time < growthTime)
         {
-            isSeedPlanted = true;
-            sunflower.SetActive(true); // Sunflower 오브젝트 활성화
+            int index = (int)(time / 10);
+            GameObject currentLeaf = Leaves[index];
+
+            if (currentLeaf.activeSelf == false)
+                currentLeaf.SetActive(true);
+
+            size = (Leaves_size[index]) * (time % 10) * growthRate;
+            currentLeaf.transform.localScale = new Vector3(size, size, size);
         }
     }
 
-    void GrowSunflower()
+    void clock()
     {
-        currentGrowthTime += Time.deltaTime;
-        if (currentGrowthTime <= growthTime)
+        if (time <= growthTime && time > 0)
         {
-            int index = (int)(currentGrowthTime / 10);
-            if (index < leafCount)
+            time += Time.deltaTime;
+
+            if (time % 10 == 0)
             {
-                GameObject currentLeaf = leaves[index];
-                if (!currentLeaf.activeSelf)
-                    currentLeaf.SetActive(true);
-
-                float growthProgress = (currentGrowthTime % 10) * growthRate;
-                Vector3 newSize = originalLeafSizes[index] * growthProgress;
-                currentLeaf.transform.localScale = newSize;
+                size = 0f;
             }
         }
     }
+
+    // 이 메서드는 SunflowerSeed가 Sunflowerbase에 심어질 때 호출되어야 합니다.
+    public void OnSeedPlanted()
+    {
+        // SunflowerSeed와 Sunflowerbase를 비활성화
+        sunflowerSeed.SetActive(false);
+        sunflowerBase.SetActive(false);
+
+        // Sunflower 객체 활성화 및 성장 시작
+        gameObject.SetActive(true);
+        time = 1f; // 성장 과정을 시작하기 위해 time을 초기화합니다.
+    }
+
+    void CompleteGrowth()
+    {
+        gameObject.SetActive(false); // Sunflower 객체 비활성화
+        if (flower != null)
+        {
+            flower.SetActive(true); // Flower 객체 활성화
+        }
+    }
 }
+
 
