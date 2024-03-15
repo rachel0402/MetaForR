@@ -12,6 +12,7 @@ TagManager:
   - Ground
   - DialogPanel
   - floor
+  - Fish
   layers:
   - Default
   - TransparentFX
