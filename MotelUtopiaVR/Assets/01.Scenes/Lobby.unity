@@ -2861,7 +2861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8120b83b5608b8e45b67e14b5726df0d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.09
+      value: 1.094
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8120b83b5608b8e45b67e14b5726df0d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11202,6 +11202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: eb_sconce_light_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4964217380036920365, guid: 71bc6dae2250d0d49be15d869d391240, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9c07c97bb4b204c4aae8dee8e93eeeb9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71bc6dae2250d0d49be15d869d391240, type: 3}
 --- !u!1 &1047276666
@@ -11601,6 +11605,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: eb_sconce_light_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4964217380036920365, guid: 71bc6dae2250d0d49be15d869d391240, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9c07c97bb4b204c4aae8dee8e93eeeb9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71bc6dae2250d0d49be15d869d391240, type: 3}
 --- !u!1 &1071561163
