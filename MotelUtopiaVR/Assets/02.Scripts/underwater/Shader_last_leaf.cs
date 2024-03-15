@@ -44,7 +44,7 @@ public class Shader_last_leaf : MonoBehaviour
 
         if (getValue < minValue)
         {
-            GetComponentInParent<Selet>().Gravity.useGravity = false;
+            GetComponentInParent<Select>().Gravity.useGravity = false;
             gameObject.SetActive(false);
 
             getValue = maxValue;

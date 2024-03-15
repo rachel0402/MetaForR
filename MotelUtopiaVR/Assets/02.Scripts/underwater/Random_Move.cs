@@ -6,6 +6,7 @@ public class Random_Move : MonoBehaviour
 {
     public float Speed = 1f;
     public float Rotation_Speed = 1f;
+    public int Count;
     private float x;
     private float y;
     private float z;
@@ -15,19 +16,24 @@ public class Random_Move : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Count = 1;
+        Random_check();
+        SetRotation();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.localPosition, Random_Position) < 0.01f)
+        if (Count < 15)
         {
-            Random_check();
-            SetRotation();
+            if (Vector3.Distance(transform.localPosition, Random_Position) < 0.01f)
+            {
+                Random_check();
+                SetRotation();
+            }
+            Object_Move();
+            RotateObject();
         }
-        Object_Move();
-        RotateObject();
     }
 
     private void Random_check()
@@ -36,6 +42,7 @@ public class Random_Move : MonoBehaviour
         y = Random.Range(0f, 3f);
         z = Random.Range(-8f, 8f);
         Random_Position = new Vector3(x, y, z);
+        Count += 1;
     }
 
     private void Object_Move()
