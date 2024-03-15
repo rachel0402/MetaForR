@@ -12,6 +12,8 @@ TagManager:
   - Ground
   - DialogPanel
   - floor
+  - Sunflower
+  - SunflowerSeed
   layers:
   - Default
   - TransparentFX
