@@ -2621,6 +2621,7 @@ GameObject:
   - component: {fileID: 203372831}
   - component: {fileID: 203372832}
   - component: {fileID: 203372833}
+  - component: {fileID: 203372834}
   m_Layer: 6
   m_Name: water door
   m_TagString: door
@@ -2679,6 +2680,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorObject: {fileID: 203372830}
+--- !u!65 &203372834
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203372830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.095953465, y: 1.97424, z: 0.9343078}
+  m_Center: {x: -0.013044596, y: 0.13171309, z: 0.422603}
 --- !u!1001 &209618440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3641,6 +3655,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e9e021dfcd653aa469f35d79a0e1bdcd, type: 3}
   m_PrefabInstance: {fileID: 371495163}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &371495165 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e9e021dfcd653aa469f35d79a0e1bdcd, type: 3}
+  m_PrefabInstance: {fileID: 371495163}
+  m_PrefabAsset: {fileID: 0}
 --- !u!54 &371495166
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3682,7 +3701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 1983751095}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -3772,7 +3791,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 371495165}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
@@ -3786,11 +3805,11 @@ MonoBehaviour:
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
   m_TrackRotation: 1
-  m_SmoothRotation: 0
+  m_SmoothRotation: 1
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
   m_TrackScale: 1
@@ -5563,7 +5582,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 523385358}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
@@ -5642,6 +5661,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.89521927, y: 0.9949959, z: 5.2254195}
   m_Center: {x: 0.0000003653175, y: -0.08122351, z: -0.006306699}
+--- !u!4 &523385358 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 87afa5fa6d3b80b4d8f524869ddd7df4, type: 3}
+  m_PrefabInstance: {fileID: 523385353}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &523538347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9999,37 +10023,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fd1311e59a2c9949868136492f68486, type: 3}
---- !u!1 &856601846
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 856601847}
-  m_Layer: 6
-  m_Name: Grab
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &856601847
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 856601846}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.00388, z: 0.007}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1798531936}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &871963398
 GameObject:
   m_ObjectHideFlags: 0
@@ -18347,6 +18340,7 @@ GameObject:
   - component: {fileID: 1716502160}
   - component: {fileID: 1716502161}
   - component: {fileID: 1716502162}
+  - component: {fileID: 1716502163}
   m_Layer: 6
   m_Name: space door
   m_TagString: door
@@ -18405,6 +18399,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorObject: {fileID: 1716502159}
+--- !u!65 &1716502163
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716502159}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.060276985, y: 1.9862554, z: 0.9712415}
+  m_Center: {x: -0.017665386, y: 0.14200675, z: 0.35585952}
 --- !u!1001 &1719958771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19226,7 +19233,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 1747800430}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
@@ -19305,6 +19312,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0289814, y: 1.2603396, z: 4.9678226}
   m_Center: {x: -0.00000029096205, y: -0.17956881, z: 0.03623873}
+--- !u!4 &1747800430 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f1f4ff98de1fad34bb85f07fb06201b5, type: 3}
+  m_PrefabInstance: {fileID: 1747800425}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1753389884
 GameObject:
   m_ObjectHideFlags: 0
@@ -23524,6 +23536,7 @@ GameObject:
   - component: {fileID: 2073828934}
   - component: {fileID: 2073828938}
   - component: {fileID: 2073828939}
+  - component: {fileID: 2073828940}
   m_Layer: 6
   m_Name: plant door
   m_TagString: Right Hand
@@ -23582,6 +23595,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorObject: {fileID: 2073828933}
+--- !u!65 &2073828940
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073828933}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06669569, y: 2.0439224, z: 0.859582}
+  m_Center: {x: 0.001439333, y: 0.0977571, z: 0.37422487}
 --- !u!1 &2074266175
 GameObject:
   m_ObjectHideFlags: 0

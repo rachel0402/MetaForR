@@ -6,48 +6,34 @@ using UnityEngine.SceneManagement;
 public class Open_plant : MonoBehaviour
 {
     public GameObject doorObject;
+    private Rigidbody doorRigidbody;
     Animator doorAnim;
-    private bool doorOpen = false;
 
     // Start is called before the first frame update
     void Start()
     {
         doorAnim = doorObject.GetComponent<Animator>();
+        doorRigidbody = doorObject.GetComponent<Rigidbody>();
+
+        if (doorRigidbody == null)
+        {
+            Debug.LogWarning("Rigidbody component not found on door object.");
+        }
     }
 
-    private void Update()
+    void OnTriggerEnter(Collider n)
     {
-        Vector3 controllerRotation = transform.rotation.eulerAngles;
-
-        float rotationThreshold = 18f;
-
-        if(controllerRotation.z >= rotationThreshold && !doorOpen)
+        if (doorRigidbody != null && n.gameObject.CompareTag("key_p"))
         {
-            doorAnim.SetBool("Open", true);
-            doorOpen = true;
-            Invoke("ChangeScene", 5f);
-        }
-
-        else if(controllerRotation.z < rotationThreshold && !doorOpen)
-        {
-            doorAnim.SetBool("Open", false);
-            doorOpen = false;
+            //doorObject.transform.Rotate(new Vector3(0,0,0));
+            doorAnim.SetTrigger("Open");
+            Invoke("ChangeScene", 2f);
         }
     }
-
-    //void OnTriggerEnter(Collider n)
-    //{
-    //    if (n.gameObject.CompareTag("key_p"))
-    //    {
-    //        //doorObject.transform.Rotate(new Vector3(0,0,0));
-    //        doorAnim.SetTrigger("Open");
-    //        Invoke("ChangeScene", 2f);
-    //    }
-    //}
 
     void ChangeScene()
     {
-        SceneManager.LoadScene("Plants");
+        SceneManager.LoadScene("Forest");
     }
-    
+
 }
