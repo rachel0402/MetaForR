@@ -6,17 +6,25 @@ using UnityEngine.SceneManagement;
 public class Open_space : MonoBehaviour
 {
     public GameObject doorObject;
+    private Rigidbody doorRigidbody;
     Animator doorAnim;
 
     // Start is called before the first frame update
     void Start()
     {
         doorAnim = doorObject.GetComponent<Animator>();
+
+        doorRigidbody = doorObject.GetComponent<Rigidbody>();
+
+        if (doorRigidbody == null)
+        {
+            Debug.LogWarning("Rigidbody component not found on door object.");
+        }
     }
 
     void OnTriggerEnter(Collider n)
     {
-        if (n.gameObject.CompareTag("key_s"))
+        if (doorRigidbody != null && n.gameObject.CompareTag("key_s"))
         {
             //doorObject.transform.Rotate(new Vector3(0,0,0));
             doorAnim.SetTrigger("Open");
@@ -26,7 +34,7 @@ public class Open_space : MonoBehaviour
 
     void ChangeScene()
     {
-        SceneManager.LoadScene("Space");
+        SceneManager.LoadScene("Universe 2");
     }
     
 }
