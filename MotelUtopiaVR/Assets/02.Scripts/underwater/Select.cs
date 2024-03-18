@@ -11,6 +11,7 @@ public class Select : MonoBehaviour
     public ParticleSystem particle;
     public ParticleSystem particle2;
     public Rigidbody Gravity;
+    public GameObject grow;
 
     private void Start()
     {
@@ -29,11 +30,11 @@ public class Select : MonoBehaviour
     {
         particle.Play();
         particle2.Play();
+        grow.GetComponent<Grow>().time = -1f;
     }
 
     private void Set_NonGrab(SelectExitEventArgs interacter)
     {
         Gravity.useGravity = true;
-        GetComponentInParent<Grow>().time = -1f;
     }
 }
