@@ -5,7 +5,6 @@ using UnityEngine;
 public class gameManager : MonoBehaviour
 {
     public GameObject canvas;
-    public GameObject text;
 
     public float delayInSeconds = 2f;
 
@@ -18,13 +17,8 @@ public class gameManager : MonoBehaviour
     void ActivateCanvas()
     {
         canvas.SetActive(true);
-        text.SetActive(false);
-        Invoke("Activatetext", delayInSeconds);
+
 
     }
 
-    void Activatetext()
-    {
-        text.SetActive(true);
-    }
 }
