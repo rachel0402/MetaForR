@@ -8,6 +8,8 @@ public class ChatController : MonoBehaviour
     private string text;
     public TMP_Text targetText;
     private float delay = 0.125f;
+    public GameObject panel1;
+    public GameObject panel2;
 
     void Start()
     {
@@ -31,5 +33,8 @@ public class ChatController : MonoBehaviour
 
             yield return new WaitForSeconds(delay);
         }
+
+        panel1.SetActive(false);
+        panel2.SetActive(true);
     }
 }
