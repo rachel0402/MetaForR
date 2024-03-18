@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
 //이렇게 짜면 안됨니다...ㅠㅠ 시간이 없어서...
@@ -8,7 +9,7 @@ using UnityEngine.UI;
 public partial class dialog : MonoBehaviour
 {
     [SerializeField]
-    private Text txt_Dialogue;
+    private TMP_Text txt_Dialogue;
 
     [SerializeField]
     GameObject frame;
