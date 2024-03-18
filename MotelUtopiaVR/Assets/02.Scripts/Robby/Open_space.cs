@@ -14,17 +14,19 @@ public class Open_space : MonoBehaviour
     {
         doorAnim = doorObject.GetComponent<Animator>();
 
-        doorRigidbody = doorObject.GetComponent<Rigidbody>();
+        //doorRigidbody = doorObject.GetComponent<Rigidbody>();
 
-        if (doorRigidbody == null)
-        {
-            Debug.LogWarning("Rigidbody component not found on door object.");
-        }
+        //if (doorRigidbody == null)
+        //{
+        //    Debug.LogWarning("Rigidbody component not found on door object.");
+        //}
     }
 
     void OnTriggerEnter(Collider n)
     {
-        if (doorRigidbody != null && n.gameObject.CompareTag("key_s"))
+        //  if (doorRigidbody != null && n.gameObject.CompareTag("key_s"))
+
+        if (n.gameObject.CompareTag("key_s"))
         {
             //doorObject.transform.Rotate(new Vector3(0,0,0));
             doorAnim.SetTrigger("Open");
@@ -36,5 +38,4 @@ public class Open_space : MonoBehaviour
     {
         SceneManager.LoadScene("Universe 2");
     }
-    
 }
