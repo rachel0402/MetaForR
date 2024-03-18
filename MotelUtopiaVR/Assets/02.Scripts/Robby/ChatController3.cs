@@ -40,6 +40,7 @@ public class ChatController3 : MonoBehaviour
 
             yield return new WaitForSeconds(delay);
         }
+        MoveObjectA();
     }
     
 
