@@ -1,50 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 
 public class ChatController2 : MonoBehaviour
 {
-    public Text ChatText;
-
-    public string writerText = ""; 
-    public float delayBetweenCharacters = 0.05f; // 문자 간의 딜레이 시간
-    public float textDisplayTime = 1f; // 문장이 표시되는 시간
+    private string text;
+    public TMP_Text targetText;
+    private float delay = 0.125f;
     public GameObject but1;
     public GameObject but2;
 
     void Start()
     {
-        StartCoroutine(TextPractice());
+        text = targetText.text.ToString();
+        targetText.text = " ";
+
+        StartCoroutine(textPrint(delay));
         but1.gameObject.SetActive(false);
         but2.gameObject.SetActive(false);
     }
 
-    IEnumerator NormalChat(string narration)
+    IEnumerator textPrint(float d)
     {
-        writerText = "";
+        int count = 0;
 
-        for (int a = 0; a < narration.Length; a++)
+        while (count != text.Length)
         {
-            Debug.Log(narration.Length);
-            writerText += narration[a];
-            ChatText.text = writerText;
-            yield return new WaitForSeconds(delayBetweenCharacters);
+            if (count < text.Length)
+            {
+                targetText.text += text[count].ToString();
+                count++;
+            }
+
+            yield return new WaitForSeconds(delay);
         }
-
-        // 모든 문자가 표시된 후 대기
-        yield return new WaitForSeconds(textDisplayTime);
-
-        but1.gameObject.SetActive(true);
+    
+    but1.gameObject.SetActive(true);
         but2.gameObject.SetActive(true);
  
     }
-
-    IEnumerator TextPractice()
-    {
-        yield return StartCoroutine(NormalChat("흠.. 그래요, 혹시 제가 그 고민을 덜어낼 수 있는 방을 추천드려도 될까요 ? "));
-        
-    }
-
 }
