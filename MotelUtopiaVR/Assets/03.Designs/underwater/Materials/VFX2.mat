@@ -50,7 +50,11 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _Height: 0.1
+<<<<<<< Updated upstream
     - _Value: -1.0001894
+=======
+    - _Value: 0.4336564
+>>>>>>> Stashed changes
     m_Colors:
     - _Color: {r: 0.2561398, g: 0.6468176, b: 0.0698563, a: 0}
   m_BuildTextureStacks: []
